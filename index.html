@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegio Privado </title>
+</head>
+<body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40 md:hidden"></div>
+ <header class="fixed top-0 left-0 w-full z-50 bg-[#2fa7d6] text-white px-5 h-[60px] flex justify-between items-center">
+  <!-- Branding -->
+  <div class="flex items-center gap-3">
+    <img src="Logos/Logo-Provisorio.png" alt="Logo de la Institucion" class="h-[46px] rounded-full">
+    <h1 class="text-[18px] font-semibold">Colegio Privado</h1>
+  </div>
+
+  <!-- Botón hamburguesa en móvil -->
+  <button id="menu-btn" class="md:hidden focus:outline-none z-50 relative w-8 h-8 flex flex-col justify-between">
+    <span class="block h-1 bg-white rounded transition-all"></span>
+    <span class="block h-1 bg-white rounded transition-all"></span>
+    <span class="block h-1 bg-white rounded transition-all"></span>
+  </button>
+
+  <!-- Menú principal -->
+  <nav id="menu" class="hidden md:flex flex-col md:flex-row items-center gap-5 text-[14px] font-medium absolute md:static top-[60px] left-0 w-full md:w-auto bg-[#2fa7d6] md:bg-transparent p-5 md:p-0 transition-all">
+    <ul class="flex flex-col md:flex-row items-center gap-5 w-full md:w-auto">
+      <li><a href="index.html" class="hover:border-b-2 hover:border-white pb-1 transition">Inicio</a></li>
+      <li><a href="Quienes-Somos.html" class="hover:border-b-2 hover:border-white pb-1 transition">Quienes Somos</a></li>
+
+      <!-- Submenú adaptado -->
+<li class="relative w-full md:w-auto group">
+  <button  class="w-full md:w-auto flex justify-between items-center gap-2 hover:bg-white/20 px-2 py-2 rounded md:hover:bg-transparent">
+    Niveles
+    <svg id="niveles-icon" class="w-4 h-4 transition-transform md:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <!-- Submenú -->
+  <ul 
+  class="hidden flex-col w-full bg-[#2fa7d6] md:absolute md:top-full md:left-0 md:pt-2 md:min-w-[160px] md:rounded md:shadow-md group-hover:flex hover:flex">
+    <li><a href="Inicial.html" class="block w-full px-4 py-2 hover:bg-white hover:text-[#2fa7d6] rounded">Nivel Inicial</a></li>
+    <li><a href="Primario.html" class="block w-full px-4 py-2 hover:bg-white hover:text-[#2fa7d6] rounded">Nivel Primario</a></li>
+    <li><a href="Secundario.html" class="block w-full px-4 py-2 hover:bg-white hover:text-[#2fa7d6] rounded">Nivel Secundario</a></li>
+  </ul>
+</li>
+
+      <li><a href="Direccion.html" class="hover:border-b-2 hover:border-white pb-1 transition">Ubicación</a></li>
+      <li><a href="Eventos.html" class="hover:border-b-2 hover:border-white pb-1 transition">Eventos</a></li>
+      <li><a href="Noticias.html" class="hover:border-b-2 hover:border-white pb-1 transition">Noticias</a></li>
+
+      <!-- Íconos redes -->
+      <li><a href="Contactanos.html"><img src="Logos/1000081997.png" alt="Contacto" class="h-9 hover:scale-110 transition-transform"></a></li>
+      <li><a href="#"><img src="Logos/pngwing.com.png" alt="Facebook" class="h-9 hover:scale-110 transition-transform"></a></li>
+      <li><a href="#"><img src="Logos/p2.png" alt="Instagram" class="h-9 hover:scale-110 transition-transform"></a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Panel lateral móvil -->
+<div id="mobile-menu" class="fixed top-0 left-0 h-full w-64 bg-[#2fa7d6] text-white transform -translate-x-full transition-transform duration-300 z-40 md:hidden p-5 space-y-4">
+  <a href="index.html" class="block">Inicio</a>
+  <a href="Quienes-Somos.html" class="block">Quienes Somos</a>
+
+  <div>
+    <button id="niveles-btn" class="w-full flex justify-between items-center">
+      Niveles
+      <svg id="niveles-icon" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+    <ul id="niveles-submenu" class="hidden mt-2 ml-4 space-y-2 p-6 ">
+      <li><a href="Inicial.html" class="block">Nivel Inicial</a></li>
+      <li><a href="Primario.html" class="block">Nivel Primario</a></li>
+      <li><a href="Secundario.html" class="block">Nivel Secundario</a></li>
+    </ul>
+  </div>
+
+  <a href="Direccion.html" class="block">Ubicación</a>
+  <a href="Eventos.html" class="block">Eventos</a>
+  <a href="Noticias.html" class="block">Noticias</a>
+
+  <!-- Redes -->
+  <div class="flex gap-3 pt-4">
+    <a href="Contactanos.html"><img src="Logos/1000081997.png" class="h-9" /></a>
+    <a href="#"><img src="Logos/pngwing.com.png" class="h-9" /></a>
+    <a href="#"><img src="Logos/p2.png" class="h-9" /></a>
+  </div>
+</div>
+
+<!-- Script para controlar menú -->
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const nivelesBtn = document.getElementById('niveles-btn');
+  const nivelesSubmenu = document.getElementById('niveles-submenu');
+  const nivelesIcon = document.getElementById('niveles-icon');
+
+  let isOpen = false;
+
+  menuBtn.addEventListener('click', () => {
+    isOpen = !isOpen;
+    mobileMenu.classList.toggle('-translate-x-full');
+    
+    const spans = menuBtn.querySelectorAll('span');
+    if (isOpen) {
+      spans[0].style.transform = 'rotate(45deg) translateY(8px)';
+      spans[1].style.opacity = '0';
+      spans[2].style.transform = 'rotate(-45deg) translateY(-8px)';
+    } else {
+      spans[0].style.transform = 'none';
+      spans[1].style.opacity = '1';
+      spans[2].style.transform = 'none';
+    }
+  });
+
+  nivelesBtn.addEventListener('click', () => {
+    nivelesSubmenu.classList.toggle('hidden');
+    nivelesIcon.classList.toggle('rotate-180');
+  });
+</script>
+
+<!-- Slider -->
+<div class="swiper w-full h-[900px] md:h-[700px] mt-0">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide"><img src="Imagenes/Imagen-Provisoria.png" class="w-full h-full object-cover" /></div>
+    <div class="swiper-slide"><img src="Imagenes/Imagen-Provisoria.png" class="w-full h-full object-cover" /></div>
+    <div class="swiper-slide"><img src="Imagenes/Imagen-Provisoria.png" class="w-full h-full object-cover" /></div>
+    <div class="swiper-slide"><img src="Imagenes/Imagen-Provisoria.png" class="w-full h-full object-cover" /></div>
+  </div>
+
+  <!-- Botones -->
+  <div class="swiper-button-next hidden md:block" style="right: 1rem; --swiper-navigation-color: white;"></div>
+  <div class="swiper-button-prev hidden md:block" style="left: 1rem; --swiper-navigation-color: white;"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  const isMobile = window.matchMedia("(max-width: 767px)").matches;
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    speed: 1000,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    grabCursor: true,
+    simulateTouch: isMobile,
+    // Soporte táctil ya viene incluido
+  });
+</script>
+
+<!-- MISION-VISION -->
+
+ <section class="bg-transparent text-black flex flex-wrap justify-center gap-6 pt-8 min-h-[40vh] text-center">
+
+  <article class="flex flex-col justify-start p-5 mt-8 w-full sm:w-[40%] min-w-[292px] rounded-xl text-sm min-h-[32vh]">
+
+    <h2 class="text-center mb-5 pb-3 border-b border-[#a1c05a] text-base font-normal leading-tight">MISION</h2>
+
+    <p class="px-4 text-base min-h-[26vh] text-sm">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor labore et accusantium nostrum doloremque esse tempora voluptatibus, porro perspiciatis molestiae quis nulla quaerat atque quidem rem numquam! Deleniti delectus cum autem quidem perferendis mollitia fuga voluptates ratione hic expedita voluptatibus unde, id cumque rem error sequi, recusandae alias eligendi harum repellendus fugiat! Aliquid excepturi hic, consequuntur quaerat est laboriosam ad. Perspiciatis ea quos nam cupiditate.
+    </p>
+
+  </article>
+
+  <article class="flex flex-col justify-start p-5 mt-8 w-full sm:w-[40%] min-w-[292px] rounded-xl text-sm min-h-[32vh]">
+
+    <h2 class="text-center mb-5 pb-3 border-b border-[#a1c05a] text-base font-normal">VISION</h2>
+
+    <p class="px-4 text-base min-h-[26vh]  text-sm">
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor labore et accusantium nostrum doloremque esse tempora voluptatibus, porro perspiciatis molestiae quis nulla quaerat atque quidem rem numquam! Deleniti delectus cum autem quidem perferendis mollitia fuga voluptates ratione hic expedita voluptatibus unde, id cumque rem error sequi, recusandae alias eligendi harum repellendus fugiat! Aliquid excepturi hic, consequuntur quaerat est laboriosam ad. Perspiciatis ea quos nam cupiditate.
+    </p>
+
+  </article>
+
+</section>
+
+<!-- NIVELES -->
+
+
+<section class="pt-6">
+
+  <h2 class="flex items-center justify-center h-[50px] text-[26px] text-black font-semibold">
+    Niveles
+  </h2>
+
+  <div class="flex flex-wrap justify-center gap-9 px-4 pt-4 pb-[70px]">
+
+    <!-- Artículo 1 -->
+    <a href="Inicial.html"
+       class="no-underline text-white w-full sm:w-[47%] md:w-[30%] lg:w-[21%] min-w-[292px] h-[432px] rounded overflow-hidden transition hover:scale-[1.02] hover:shadow-[6px_15px_25px_rgba(0,0,0,0.5)] flex flex-col items-center bg-[#1384b1]">
+
+      <img src="Imagenes/Imagen-Provisoria.png" class="w-full h-[175px] object-cover" />
+
+      <div class="px-8 pt-6 pb-8 text-center text-[15.8px]">
+        <h2 class="text-lg font-semibold">Nivel Inicial</h2><br>
+        <p><i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo veritatis sint suscipit ratione optio!"</i></p>
+      </div>
+
+    </a>
+
+    <!-- Artículo 2 -->
+    <a href="Primario.html"
+       class="no-underline text-white w-full sm:w-[47%] md:w-[30%] lg:w-[21%] min-w-[292px] h-[432px] rounded overflow-hidden transition hover:scale-[1.02] hover:shadow-[6px_15px_25px_rgba(0,0,0,0.5)] flex flex-col items-center bg-[#146f93]">
+
+      <img src="Imagenes/Imagen-Provisoria.png" class="w-full h-[175px] object-cover" />
+
+      <div class="px-8 pt-6 pb-8 text-center text-[15.8px]">
+        <h2 class="text-lg font-semibold">Nivel Primario</h2><br>
+        <p><i>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo veritatis sint suscipit ratione optio!"</i></p>
+      </div>
+
+    </a>
+
+    <!-- Artículo 3 -->
+    <a href="Secundario.html"
+       class="no-underline text-white w-full sm:w-[47%] md:w-[30%] lg:w-[21%] min-w-[292px] h-[432px] rounded overflow-hidden transition hover:scale-[1.02] hover:shadow-[6px_15px_25px_rgba(0,0,0,0.5)] flex flex-col items-center bg-[#1c566d]">
+
+      <img src="Imagenes/Imagen-Provisoria.png" class="w-full h-[175px] object-cover" />
+
+      <div class="px-8 pt-6 pb-8 text-center text-[15.8px]">
+        <h2 class="text-lg font-semibold">Nivel Secundario</h2><br>
+        <p><i>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, voluptate."</i></p>
+      </div>
+
+    </a>
+
+  </div>
+</section>
+
+<section class="text-center text-[18px] italic scale-[0.84] px-[2vw] pb-[70px] font-normal">
+  <p>
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, fugit dolorum. Quisquam!”
+  </p>
+</section>
+
+<section class="w-full min-h-[12vh] bg-[#1e97c7] text-white flex flex-col items-center py-[50px]">
+  <h2 class="text-[26px] font-semibold">Eventos</h2>
+
+  <div class="w-full flex flex-wrap justify-center gap-[50px] py-[35px]">
+    
+    <!-- Tarjeta 1 -->
+    <article class="w-[314px] min-h-[482px] bg-white text-black rounded-[3px] hover:shadow-[6px_7px_9px_rgba(0,0,0,0.3)] hover:scale-[1.015] transition-transform">
+      <img src="Imagenes/Imagen-Provisoria.png" alt="" class="w-full h-[205px] object-cover rounded-t-[3px]">
+      <h4 class="pt-[20px] pl-[24px] text-[16px] font-medium">2024 / 9 / 27</h4>
+      <p class="px-[26px] pt-[20px] pb-[20px]">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum quas ad.
+      </p>
+    </article>
+
+    <!-- Tarjeta 2 -->
+    <article class="w-[314px] min-h-[482px] bg-white text-black rounded-[3px] hover:shadow-[6px_7px_9px_rgba(0,0,0,0.3)] hover:scale-[1.015] transition-transform">
+      <img src="Imagenes/Imagen-Provisoria.png" alt="" class="w-full h-[205px] object-cover rounded-t-[3px]">
+      <h4 class="pt-[20px] pl-[24px] text-[16px] font-medium">2024 / 9 / 7</h4>
+      <p class="px-[26px] pt-[20px] pb-[20px]">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum quas ad.
+      </p>
+    </article>
+
+    <!-- Tarjeta 3 -->
+    <article class="w-[314px] min-h-[482px] bg-white text-black rounded-[3px] hover:shadow-[6px_7px_9px_rgba(0,0,0,0.3)] hover:scale-[1.015] transition-transform">
+      <img src="Imagenes/Imagen-Provisoria.png" alt="" class="w-full h-[205px] object-cover rounded-t-[3px]">
+      <h4 class="pt-[20px] pl-[24px] text-[16px] font-medium">2024 / 9 / 13</h4>
+      <p class="px-[26px] pt-[20px] pb-[20px]">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorum quas ad.
+      </p>
+    </article>
+
+  </div>
+
+  <!-- Botón -->
+  <a href="Eventos.html" class="border-2 border-white hover:bg-white hover:text-[#1d87b1] text-white px-[62px] py-[4px] transition-colors">
+    <h2 class="text-[17px]">Ver más</h2>
+  </a>
+</section>
+
+<section class="bg-white py-12 flex flex-col items-center Noticias">
+  <h2 class="text-3xl font-semibold mb-6 py-8">Novedades</h2>
+
+  <div class="flex flex-wrap justify-center gap-x-10 gap-y-14 w-[90%] tarjetas-noticias">
+
+    <!-- Tarjeta -->
+  <article class="flex justify-center w-full sm:w-[46%] md:w-[36vw] min-w-[232px] max-h-[460px] tarjeta-noticia-principal overflow-hidden">
+  <div class="flex flex-col-reverse sm:flex-row gap-3 tarjeta-noticia">
+    
+    <!-- Texto (irá arriba en celular) -->
+    <div class="flex flex-col gap-4 sm:gap-6 mt-4 sm:mt-6 px-3 sm:px-6 contenido">
+      <h3 class="text-lg font-semibold">Café Literario</h3>
+      <p class="text-base font-light">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur officia in impedit, ipsa harum. Quam.
+      </p>
+    </div>
+
+    <!-- Imagen (irá abajo en celular) -->
+    <div class="relative">
+      <img src="uploads/Uploads-Provisoria.png" alt="" class="w-full h-auto sm:h-full sm:min-w-[42vh] object-cover rounded-lg">
+      <h4 class="absolute bottom-2 left-3 text-white text-sm fecha-Noticias">31/01/25</h4>
+    </div>
+
+  </div>
+</article>
+
+<article class="flex justify-center w-full sm:w-[46%] md:w-[36vw] min-w-[232px] max-h-[460px] tarjeta-noticia-principal overflow-hidden">
+  <div class="flex flex-col-reverse sm:flex-row gap-3 tarjeta-noticia">
+    
+    <!-- Texto (irá arriba en celular) -->
+    <div class="flex flex-col gap-4 sm:gap-6 mt-4 sm:mt-6 px-3 sm:px-6 contenido">
+      <h3 class="text-lg font-semibold">Café Literario</h3>
+      <p class="text-base font-light">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur officia in impedit, ipsa harum. Quam.
+      </p>
+    </div>
+
+    <!-- Imagen (irá abajo en celular) -->
+    <div class="relative">
+      <img src="uploads/Uploads-Provisoria.png" alt="" class="w-full h-auto sm:h-full sm:min-w-[42vh] object-cover rounded-lg">
+      <h4 class="absolute bottom-2 left-3 text-white text-sm fecha-Noticias">31/01/25</h4>
+    </div>
+
+  </div>
+</article>
+
+<article class="flex justify-center w-full sm:w-[46%] md:w-[36vw] min-w-[232px] max-h-[460px] tarjeta-noticia-principal overflow-hidden">
+  <div class="flex flex-col-reverse sm:flex-row gap-3 tarjeta-noticia">
+    
+    <!-- Texto (irá arriba en celular) -->
+    <div class="flex flex-col gap-4 sm:gap-6 mt-4 sm:mt-6 px-3 sm:px-6 contenido">
+      <h3 class="text-lg font-semibold">Café Literario</h3>
+      <p class="text-base font-light">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur officia in impedit, ipsa harum. Quam.
+      </p>
+    </div>
+
+    <!-- Imagen (irá abajo en celular) -->
+    <div class="relative">
+      <img src="uploads/Uploads-Provisoria.png" alt="" class="w-full h-auto sm:h-full sm:min-w-[42vh] object-cover rounded-lg">
+      <h4 class="absolute bottom-2 left-3 text-white text-sm fecha-Noticias">31/01/25</h4>
+    </div>
+
+  </div>
+</article>
+
+<article class="flex justify-center w-full sm:w-[46%] md:w-[36vw] min-w-[232px] max-h-[460px] tarjeta-noticia-principal overflow-hidden">
+  <div class="flex flex-col-reverse sm:flex-row gap-3 tarjeta-noticia">
+    
+    <!-- Texto (irá arriba en celular) -->
+    <div class="flex flex-col gap-4 sm:gap-6 mt-4 sm:mt-6 px-3 sm:px-6 contenido">
+      <h3 class="text-lg font-semibold">Café Literario</h3>
+      <p class="text-base font-light">
+       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aspernatur officia in impedit, ipsa harum. Quam.
+      </p>
+    </div>
+
+    <!-- Imagen (irá abajo en celular) -->
+    <div class="relative">
+      <img src="uploads/Uploads-Provisoria.png" alt="" class="w-full h-auto sm:h-full sm:min-w-[42vh] object-cover rounded-lg">
+      <h4 class="absolute bottom-2 left-3 text-white text-sm fecha-Noticias">31/01/25</h4>
+    </div>
+
+  </div>
+</article>
+
+  </div>
+
+  <!-- Botón -->
+  <a href="Noticias.html" class="mt-16 px-16 py-1 border-2 border-white bg-[#1d87b1] text-white hover:bg-[#29b1e7] rounded hover:text-white noticias-boton text-center">
+    <h2 class="text-[17px] font-medium">Ver más</h2>
+  </a>
+</section>
+
+<!-- FOOTER -->
+
+<footer class="flex flex-wrap justify-evenly items-center text-white w-full h-auto pt-5 pb-3 bg-[#196f91]">
+  
+  <!-- Contactanos -->
+  <div class="flex flex-col items-center gap-3 mb-6 sm:mb-0">
+    <div class="flex flex-col items-center">
+      <h4 class="text-lg font-semibold">Contactanos</h4>
+      <div class="w-[96%] border-b-2 border-[#cde98d] mt-1"></div>
+    </div>
+    <a href="#" class="flex items-center mt-2">
+      <img src="Logos/pngwing.com.png" class="h-5 mr-2" />
+      <p class="text-sm">3888-456743</p>
+    </a>
+  </div>
+
+  <!-- Niveles -->
+  <div class="flex flex-col items-center gap-3 mb-6 sm:mb-0">
+    <div class="flex flex-col items-center">
+      <h4 class="text-lg font-semibold">Niveles</h4>
+      <div class="w-[96%] border-b-2 border-[#cde98d] mt-1"></div>
+    </div>
+    <div class="flex flex-col gap-1 mt-2 ml-3">
+      <a href="Inicial.html"><p class="text-sm">Inicial</p></a>
+      <a href="Primario.html"><p class="text-sm">Primario</p></a>
+      <a href="Secundario.html"><p class="text-sm">Secundario</p></a>
+    </div>
+  </div>
+
+  <!-- Correo -->
+  <div class="flex items-center mt-4 sm:mt-0">
+    <img src="Logos/vecteezy_gmail-mail-icon-for-web-design_20964377.png" class="h-5 mr-2" />
+    <p class="text-sm text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+  </div>
+
+  <!-- Redes -->
+  <div class="flex flex-col items-center mt-6 sm:mt-0">
+    <h4 class="text-lg font-semibold mb-2">Seguinos también por:</h4>
+    <a href="#" target="_blank" class="flex items-center">
+      <img src="Logos/p2.png" class="h-5 mr-2" />
+      <h4 class="text-sm">Facebook</h4>
+    </a>
+  </div>
+  
+
+  <!-- Año -->
+  <div class="w-full text-center text-sm mt-6 pt-2">
+    © 2025 San Pedro de Jujuy
+  </div>
+
+</footer>
+</body>
+</html>
